@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <main>
+      <div class="hero py-5 bg-light">
+        <div class="container">
+          <h2>Create Form</h2>
+        </div>
+      </div>
+
+      <div class="py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-lg-4">
+              <form action="detail-form.html">
+                <!-- s: input -->
+                <div class="form-group mb-3">
+                  <label for="name" class="mb-1 text-muted">Form Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="form-control"
+                    autofocus
+                    v-model="data.name"
+                  />
+                </div>
+
+                <!-- s: input -->
+                <div class="form-group my-3">
+                  <label for="slug" class="mb-1 text-muted">Form Slug</label>
+                  <input
+                    type="text"
+                    id="slug"
+                    name="slug"
+                    class="form-control"
+                    v-model="data.slug"
+                  />
+                </div>
+
+                <!-- s: input -->
+                <div class="form-group my-3">
+                  <label for="description" class="mb-1 text-muted"
+                    >Description</label
+                  >
+                  <textarea
+                    id="description"
+                    name="description"
+                    rows="4"
+                    class="form-control"
+                    v-model="data.description"
+                  ></textarea>
+                </div>
+
+                <!-- s: input -->
+                <div class="form-group my-3">
+                  <label for="allowed-domains" class="mb-1 text-muted"
+                    >Allowed Domains</label
+                  >
+                  <input
+                    type="text"
+                    id="allowed-domains"
+                    name="allowed_domains"
+                    class="form-control"
+                    v-model="data.allowed_domains"
+                  />
+                  <div class="form-text">
+                    Separate domains using comma ",". Ignore for public access.
+                  </div>
+                </div>
+
+                <!-- s: input -->
+                <div class="form-check form-switch" aria-colspan="my-3">
+                  <input
+                    type="checkbox"
+                    id="limit_one_response"
+                    name="limit_one_response"
+                    class="form-check-input"
+                    role="switch"
+                    v-model="data.limit_one_response"
+                  />
+                  <label class="form-check-label" for="limit_one_response"
+                    >Limit to 1 response</label
+                  >
+                </div>
+
+                <div class="mt-4">
+                  <button
+                    @click.prevent="createForm"
+                    type="submit"
+                    class="btn btn-primary"
+                  >
+                    Save
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
