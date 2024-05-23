@@ -27,33 +27,22 @@ export const GuardSkin = () => {
     }
 
     return (
-        <div className="">
-            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
-    <div class="container">
+        <>
+
+        <nav class="navbar navbar-expand-lg sticky-top bg-primary navbar-dark">
+      <div class="container">
         <a class="navbar-brand" href={'/dashboard'}>Formify</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item" v-if="!isLogin">
+            <button onClick={logout} class="btn bg-white text-primary ms-4">
+              Logout
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a onClick={logout} class="nav-link" href="#">Logout</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-<Outlet />
-
-<footer>
-    <div class="container">
-        <div class="text-center py-4 text-muted">
-            Copyright &copy; 2023 - Web Tech ID
-        </div>
-    </div>
-</footer>
-        </div>
-
+        <Outlet/>
+        </>
     )
 }

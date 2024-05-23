@@ -36,45 +36,65 @@ export const LoginPage = () => {
     }
 
     return (
-        <div className="">
-            <main>
-    <header class="jumbotron">
-        <div class="container text-center">
-            <h1 class="display-4">Formify</h1>
-        </div>
-    </header>
-
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
+        <main>
+      <section class="login">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-5 col-md-6">
 
                 {errorMessage && (
                     <div className="alert alert-danger">{errorMessage}</div>
                 )}
 
-                <form class="card card-default">
-                    <div class="card-header">
-                        <h4 class="mb-0">Login</h4>
+              <h1 class="text-center mb-4">Formify</h1>
+              <div class="card card-default">
+                <div class="card-body">
+                  <h3 class="mb-3">Login</h3>
+
+                  <form action="manage-forms.html" >
+                    <div class="form-group my-3">
+                      <label for="email" class="mb-1 text-muted"
+                        >Email Address</label
+                      >
+                      <input
+                        ref={inputEmail}
+                        type="email"
+                        id="email"
+                        name="email"
+                        class="form-control"
+                        autofocus
+                      />
                     </div>
-                    <div class="card-body">
-                        <div class="form-group row align-items-center">
-                            <div class="col-4 text-right">Email</div>
-                            <div class="col-8"><input ref={inputEmail} type="email" class="form-control" /></div>
-                        </div>
-                        <div class="form-group row align-items-center">
-                            <div class="col-4 text-right">Password</div>
-                            <div class="col-8"><input ref={inputPassword} type="password" class="form-control" /></div>
-                        </div>
-                        <div class="form-group row align-items-center mt-4">
-                            <div class="col-4"></div>
-                            <div class="col-8"><button onClick={login} class="btn btn-primary">Login</button></div>
-                        </div>
+
+                    <div class="form-group my-3">
+                      <label for="password" class="mb-1 text-muted"
+                        >Password</label
+                      >
+                      <input
+                        ref={inputPassword}
+                        type="password"
+                        id="password"
+                        name="password"
+                        class="form-control"
+                      />
                     </div>
-                </form>
+
+                    <div class="mt-4">
+                      <button
+                        type="submit"
+                        class="btn btn-primary"
+                        onClick={login}
+                      >
+                        Login
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-</main>
-        </div>
+      </section>
+    </main>
     )
 }
